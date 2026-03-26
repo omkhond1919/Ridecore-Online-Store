@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RideCore – Your Bike, Your Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Ride<span>Core</span></div>
+  <ul class="nav-links">
+    <li><a href="#">Gear</a></li>
+    <li><a href="#">Styles</a></li>
+    <li><a href="#">Build</a></li>
+    <li><a href="#">Deals</a></li>
+    <li><a href="#">Brands</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search gear, brands...">
+    </div>
+    <div class="nav-icon">❤️</div>
+    <div class="nav-icon">🛒 <span class="badge">3</span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Season 2025 Collection</div>
+    <h1>Ride <span class="accent">Smarter.</span> Ride Safer.</h1>
+    <p>Premium motorcycle gear curated for every riding style. From track days to daily commutes — find your perfect setup.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="scrollToProducts()">Shop Now</button>
+      <button class="btn-secondary" onclick="scrollToBuild()">Build Your Ride ⚡</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">2.4K+</div>
+      <div class="stat-label">Products</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">140+</div>
+      <div class="stat-label">Brands</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50K+</div>
+      <div class="stat-label">Riders</div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- RIDING STYLES -->
+<section class="styles-section">
+  <div class="styles-header">
+    <div>
+      <div class="section-label">Browse by Rider Type</div>
+      <div class="section-title">Shop by Riding Style</div>
+    </div>
+    <button class="btn-secondary">View All Categories</button>
+  </div>
+  <div class="styles-grid">
+    <div class="style-card" onclick="filterByStyle('Street')">
+      <div class="style-bg street-bg"></div>
+      <div class="style-content">
+        <span class="style-icon">🛣️</span>
+        <span class="style-name">Street Riders</span>
+        <span class="style-count">342 products</span>
+      </div>
+      <div class="style-line"></div>
+    </div>
+    <div class="style-card" onclick="filterByStyle('Adventure')">
+      <div class="style-bg adventure-bg"></div>
+      <div class="style-content">
+        <span class="style-icon">🏔️</span>
+        <span class="style-name">Adventure</span>
+        <span class="style-count">218 products</span>
+      </div>
+      <div class="style-line"></div>
+    </div>
+    <div class="style-card" onclick="filterByStyle('Sport')">
+      <div class="style-bg sport-bg"></div>
+      <div class="style-content">
+        <span class="style-icon">🏎️</span>
+        <span class="style-name">Sport / Track</span>
+        <span class="style-count">196 products</span>
+      </div>
+      <div class="style-line"></div>
+    </div>
+    <div class="style-card" onclick="filterByStyle('Commuter')">
+      <div class="style-bg commuter-bg"></div>
+      <div class="style-content">
+        <span class="style-icon">🌆</span>
+        <span class="style-name">Daily Commute</span>
+        <span class="style-count">264 products</span>
+      </div>
+      <div class="style-line"></div>
+    </div>
+    <div class="style-card" onclick="filterByStyle('AllWeather')">
+      <div class="style-bg allweather-bg"></div>
+      <div class="style-content">
+        <span class="style-icon">🌧️</span>
+        <span class="style-name">All-Weather</span>
+        <span class="style-count">154 products</span>
+      </div>
+      <div class="style-line"></div>
+    </div>
+    <div class="style-card" onclick="filterByStyle('Accessories')">
+      <div class="style-bg accessories-bg"></div>
+      <div class="style-content">
+        <span class="style-icon">🔧</span>
+        <span class="style-name">Accessories</span>
+        <span class="style-count">487 products</span>
+      </div>
+      <div class="style-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-section">
+  <div class="filter-bar">
+    <button class="filter-tag active" onclick="setFilter(this, 'All')">All Gear</button>
+    <button class="filter-tag" onclick="setFilter(this, 'Helmets')">Helmets</button>
+    <button class="filter-tag" onclick="setFilter(this, 'Jackets')">Jackets</button>
+    <button class="filter-tag" onclick="setFilter(this, 'Gloves')">Gloves</button>
+    <button class="filter-tag" onclick="setFilter(this, 'Boots')">Boots</button>
+    <button class="filter-tag" onclick="setFilter(this, 'Accessories')">Accessories</button>
+    <button class="filter-tag" onclick="setFilter(this, 'Electronics')">Electronics</button>
+    <button class="filter-tag" onclick="setFilter(this, 'Luggage')">Luggage</button>
+    <div class="filter-right">
+      <select class="sort-select">
+        <option>Sort: Popular</option>
+        <option>Price: Low → High</option>
+        <option>Price: High → Low</option>
+        <option>Rating</option>
+        <option>New Arrivals</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-label">Featured Gear</div>
+      <div class="section-title">Top Picks For You</div>
+    </div>
+    <button class="btn-secondary">View All →</button>
+  </div>
+  <div class="products-grid" id="productsGrid">
+    <!-- Rendered by ridecore.js -->
+  </div>
+</section>
+
+<!-- BUILD YOUR RIDE -->
+<section class="build-section" id="build">
+  <div class="build-inner">
+    <div class="build-left">
+      <div class="section-label">AI-Powered Tool</div>
+      <div class="section-title">Build Your<br>Perfect Ride</div>
+      <div class="build-steps">
+        <div class="build-step active">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <div class="step-title">Choose Your Style</div>
+            <div class="step-desc">Tell us how you ride — street, track, adventure, or commute.</div>
+          </div>
+        </div>
+        <div class="build-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <div class="step-title">Set Your Budget</div>
+            <div class="step-desc">From budget builds to premium setups — we've got you covered.</div>
+          </div>
+        </div>
+        <div class="build-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <div class="step-title">Get Your Setup</div>
+            <div class="step-desc">We generate a complete gear kit tailored exactly for you.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="build-right">
+      <div class="build-form-title">⚡ Configure Yours</div>
+
+      <div class="form-group">
+        <label class="form-label">Riding Style</label>
+        <div class="pill-options" id="styleOptions">
+          <button class="pill active" onclick="selectPill(this, 'style')">🛣️ Street</button>
+          <button class="pill" onclick="selectPill(this, 'style')">🏔️ Adventure</button>
+          <button class="pill" onclick="selectPill(this, 'style')">🏎️ Sport</button>
+          <button class="pill" onclick="selectPill(this, 'style')">🌆 Commute</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Experience Level</label>
+        <div class="pill-options">
+          <button class="pill active" onclick="selectPill(this, 'exp')">Beginner</button>
+          <button class="pill" onclick="selectPill(this, 'exp')">Intermediate</button>
+          <button class="pill" onclick="selectPill(this, 'exp')">Expert</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Budget Range: <span id="budgetVal" style="color:var(--neon)">₹50,000</span></label>
+        <input type="range" class="range-slider" min="10000" max="200000" step="5000" value="50000"
+          oninput="updateBudget(this.value)">
+        <div class="range-labels"><span>₹10K</span><span>₹2L</span></div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Primary Use</label>
+        <div class="pill-options">
+          <button class="pill active" onclick="selectPill(this, 'use')">Daily Ride</button>
+          <button class="pill" onclick="selectPill(this, 'use')">Long Trips</button>
+          <button class="pill" onclick="selectPill(this, 'use')">Track Days</button>
+          <button class="pill" onclick="selectPill(this, 'use')">Rain Riding</button>
+        </div>
+      </div>
+
+      <button class="generate-btn" onclick="generateSetup()">⚡ Generate My Setup</button>
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING -->
+<section class="trending-section">
+  <div class="section-label">What's Hot Right Now</div>
+  <div class="section-title" style="margin-bottom:0">Trending Now 🔥</div>
+  <div class="trending-grid">
+    <div class="trending-card featured">
+      <div class="trending-card-img" style="background: linear-gradient(135deg, var(--bg3), #1a1a2e);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%, rgba(232,255,0,0.1), transparent 60%);"></div>
+        🪖
+        <div style="position:absolute;bottom:20px;left:20px;background:var(--orange);color:white;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);">🔥 #1 Bestseller</div>
+      </div>
+      <div class="trending-info">
+        <div class="trending-name">Shoei GT-Air III Full Face</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin:4px 0 10px;">Premium touring helmet with integrated sun visor</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div class="trending-price">₹68,500</div>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="trending-card">
+      <div class="trending-card-img" style="background:linear-gradient(135deg,#1a0a00,#3d1700);font-size:3rem;">🧥</div>
+      <div class="trending-info">
+        <div class="trending-name">Rev'It Defender 3 Jacket</div>
+        <div class="trending-price">₹42,000</div>
+      </div>
+    </div>
+    <div class="trending-card">
+      <div class="trending-card-img" style="background:linear-gradient(135deg,#0a0a1a,#001a3d);font-size:3rem;">📱</div>
+      <div class="trending-info">
+        <div class="trending-name">Quad Lock Wireless Charger</div>
+        <div class="trending-price">₹8,500</div>
+      </div>
+    </div>
+    <div class="trending-card">
+      <div class="trending-card-img" style="background:linear-gradient(135deg,#0a1a0a,#003d10);font-size:3rem;">🧤</div>
+      <div class="trending-info">
+        <div class="trending-name">Alpinestars SP-8 V3 Gloves</div>
+        <div class="trending-price">₹12,800</div>
+      </div>
+    </div>
+    <div class="trending-card">
+      <div class="trending-card-img" style="background:linear-gradient(135deg,#1a0a1a,#3d003d);font-size:3rem;">💡</div>
+      <div class="trending-info">
+        <div class="trending-name">Denali LED Aux Light Kit</div>
+        <div class="trending-price">₹18,200</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="logo">Ride<span>Core</span></span>
+      <p>Your one-stop destination for premium motorcycle gear. Curated for every rider, built for every road.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Gear</h4>
+      <ul>
+        <li><a href="#">Helmets</a></li>
+        <li><a href="#">Jackets</a></li>
+        <li><a href="#">Gloves</a></li>
+        <li><a href="#">Boots</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Riding</h4>
+      <ul>
+        <li><a href="#">Street</a></li>
+        <li><a href="#">Adventure</a></li>
+        <li><a href="#">Sport Track</a></li>
+        <li><a href="#">Commuter</a></li>
+        <li><a href="#">All-Weather</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 RideCore. All rights reserved. Built for riders, by riders.</div>
+    <div class="footer-socials">
+      <div class="social-dot">𝕏</div>
+      <div class="social-dot">in</div>
+      <div class="social-dot">ig</div>
+      <div class="social-dot">yt</div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="buildModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕ CLOSE</button>
+    <div class="modal-title">Your Gear Setup 🏍️</div>
+    <div class="modal-subtitle" id="modalSubtitle">Curated for your riding style and budget.</div>
+    <div class="gear-setup" id="gearSetup"></div>
+    <div class="modal-total">
+      <div>
+        <div class="total-label">Complete Setup</div>
+        <div style="font-size:0.75rem;color:var(--muted);margin-top:2px;">4 items included</div>
+      </div>
+      <div class="total-price" id="totalPrice">₹0</div>
+    </div>
+    <button class="generate-btn modal-cta">🛒 Add All to Cart</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
